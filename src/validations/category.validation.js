@@ -29,7 +29,10 @@ const updateCategory = {
   body: Joi.object()
     .keys({
         categoryname: Joi.string().required(),
-        id: Joi.string()
+        id: Joi.string(),
+        createdAt: Joi.string(),
+        updatedAt: Joi.string(),
+        numberOfPosts: Joi.number()
         
     })
     .min(1),

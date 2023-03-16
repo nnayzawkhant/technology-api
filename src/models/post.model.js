@@ -25,13 +25,13 @@ const postSchema = mongoose.Schema(
         ref: 'Category',
         required: false, 
     },
+    summary: {
+        type: String
+    },
     viewCounts: {
         type : Number,
         default: 0
     },
-    // category: {
-    //     type: String,
-    // }
 },{
     timestamps: true,
   }

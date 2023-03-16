@@ -13,9 +13,7 @@ const { authLimiter } = require('./middlewares/rateLimiter');
 const routes = require('./routes/v1');
 const { errorConverter, errorHandler } = require('./middlewares/error');
 const ApiError = require('./utils/ApiError');
-const bodyParser = require('body-parser');
-// const multer = require("multer");
-// const path = require("path");
+
 
 const app = express();
 
@@ -56,31 +54,6 @@ passport.use('jwt', jwtStrategy);
 if (config.env === 'production') {
   app.use('/v1/auth', authLimiter);
 }
-
-// const storage = multer.diskStorage({
-//   destination: './Images',
-//   filename: (req, file, cb) => {
-//       return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
-//   }
-// })
-
-// const upload = multer({
-//   storage: storage,
-//   limits: {
-//       fileSize: 1000000
-//   }
-// })
-
-
-// app.post("/photo", upload.single('photo'), (req, res) => {
-
-//   try {
-//     console.log(req.file)
-//     return res.status(200).json("File uploded successfully");
-//   } catch (error) {
-//     console.error(error);
-//   }
-// })
 
 // v1 api routes
 app.use('/v1', routes);

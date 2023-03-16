@@ -6,6 +6,7 @@ const createPost = {
     title: Joi.string().required(),
     photo: Joi.string().required(),
     desc: Joi.string().required(),
+    summary: Joi.string().required(),
     category: Joi.string().required(),
     user: Joi.string()
   }),
@@ -36,6 +37,7 @@ const updatePost = {
         title: Joi.string().required(),
         photo: Joi.string().required(),
         desc: Joi.string().required(),
+        summary: Joi.string().required(),
         category: Joi.string(),
         user: Joi.string(),
         
